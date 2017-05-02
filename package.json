@@ -1,0 +1,23 @@
+{
+  "name": "dailydog",
+  "version": "1.0.0",
+  "description": "sweet dog app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StrateUp/dailydog.git"
+  },
+  "author": "pms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StrateUp/dailydog/issues"
+  },
+  "homepage": "https://github.com/StrateUp/dailydog#readme",
+  "dependencies": {
+    "sequelize": "^3.30.4"
+  }
+}
