@@ -1,3 +1,5 @@
+//user uses cms to enter data this logic gets and posts///manages from db
+
 // *********************************************************************************
 // dogpost-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************

@@ -1,0 +1,1 @@
+// CRUD to send initial user input to database, use models doguser.js

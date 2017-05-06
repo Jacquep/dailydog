@@ -1,16 +1,53 @@
 module.exports = function(sequelize, DataTypes) {
   var DogUser = sequelize.define("DogUser", {
     // Giving the Author model a name of type STRING
-    name:{ 
-        type: DataTypes.STRING
-    },
-    
-    title: {
+    dog_name:{ 
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
             len: [1]
         }
+    },  
+    breed: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+    age: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+    fav_activity: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+     owner: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+    },
+
+
+    //do i need this for password encription, help me do this 
+    password: {
+        type: DataTypes.INTEGER      
     },
     // Here we'll pass a second "classMethods" object into the define method
     // This is for any additional configuration we want to give our models
