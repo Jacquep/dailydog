@@ -6,9 +6,10 @@ var methodOverride = require("method-override");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+
 var sequelize = require("sequelize");
 
-// Requiring our models for syncing
+// Requiring our models fseg
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
