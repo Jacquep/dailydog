@@ -1,4 +1,28 @@
+.topImage {
 
+	max-height: 50vh;
+	width: 100%;
+
+}
+
+.blog-picture {
+
+	max-height: 30vh !important;
+
+}
+
+.blog-text {
+
+	display: inline;
+}
+
+.round {
+    border-radius: 50px;
+    border-style: solid;
+    color: black;
+    margin: 15px;
+    text-align: center;
+}
 .form-registration {
   background: #fefefe;
 }
@@ -49,6 +73,7 @@
   margin-left: 0;
   border-radius: 5000px;
 }
+
 
 [data-whatinput='mouse'] .form-registration-group .form-registration-submit-button {
   outline: 0;
@@ -258,7 +283,8 @@ button {
 }
 
 img.avatar {
-    width: 40%;
+    width: 40%
+    %;
     border-radius: 50%;
 }
 p {
@@ -292,9 +318,9 @@ p {
     text-align: left;
   }
 
-button {
-    width: 33%;
-    margin-left: 36%;
+/*button {*/
+/*    width: 33%;*/
+/*    margin-left: 36%;*/
 }
 
 h2 {
@@ -327,9 +353,9 @@ h2 {
     text-align: left;
   }
 
-button {
-    width: 33%;
-    margin-left: 25%;
+/*button {*/
+/*    width: 33%;*/
+/*    margin-left: 25%;*/
 }
 
 h2 {
