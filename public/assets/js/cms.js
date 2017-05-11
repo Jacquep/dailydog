@@ -3,7 +3,8 @@ $(document).ready(function() {
   var bodyInput = $("#body");
   var titleInput = $("#title");
   var cmsForm = $("#cms");
-  var authorSelect = $("#author");
+  var tagInput =$("#tag");
+  //var authorSelect = $("#author");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
@@ -58,8 +59,8 @@ $(document).ready(function() {
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(dogpost) {
-    $.dogpost("/api/posts", dogpost, function() {
-      window.location.href = "/blog";
+    $.dogpost("/api/dogposts", dogpost, function() {
+      window.location.href = "/dogposts";
     });
   }
 
@@ -82,6 +83,7 @@ $(document).ready(function() {
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
         bodyInput.val(data.body);
+        tagInput.val(data.tag);
         doguserId = data.DogUserId || data.id;
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
@@ -91,28 +93,28 @@ $(document).ready(function() {
   }
 
   // A function to get Authors and then render our list of Authors
-  function getDogUsers() {
-    $.get("/api/dogusers", renderDogUsersList);
-  }
+  // function getDogUsers() {
+  //   $.get("/api/dogusers", renderDogUsersList);
+  // }
   // Function to either render a list of authors, or if there are none, direct the user to the page
   // to create an author first
-  function renderDogUsersList(data) {
-    if (!data.length) {
-      window.location.href = "/dogusers";
-    }
-    $(".hidden").removeClass("hidden");
-    var rowsToAdd = [];
-    for (var i = 0; i < data.length; i++) {
-      rowsToAdd.push(createDogUserRow(data[i]));
-    }
-    authorSelect.empty();
-    console.log(rowsToAdd);
-    console.log(authorSelect);
-    authorSelect.append(rowsToAdd);
-    authorSelect.val(doguserId);
-  }
+  // function renderDogUsersList(data) {
+  //   if (!data.length) {
+  //     window.location.href = "/dogusers";
+  //   }
+  //   $(".hidden").removeClass("hidden");
+  //   var rowsToAdd = [];
+  //   for (var i = 0; i < data.length; i++) {
+  //     rowsToAdd.push(createDogUserRow(data[i]));
+  //   }
+  //   authorSelect.empty();
+  //   console.log(rowsToAdd);
+  //   console.log(authorSelect);
+  //   authorSelect.append(rowsToAdd);
+  //   authorSelect.val(doguserId);
+  // }
 
-  // Creates the author options in the dropdown
+  //Creates the options in the dropdown
   function createDogUserRow(doguser) {
     var listOption = $("<option>");
     listOption.attr("value", doguser.id);
@@ -124,7 +126,7 @@ $(document).ready(function() {
   function updatePost(post) {
     $.ajax({
       method: "PUT",
-      url: "/api/posts",
+      url: "/api/dogposts",
       data: post
     })
     .done(function() {

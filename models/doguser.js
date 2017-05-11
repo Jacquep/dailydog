@@ -43,14 +43,21 @@ module.exports = function(sequelize, DataTypes) {
             len: [1]
         }
     },
+    imgURL:{
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+
 
 
     //do i need this for password encription, help me do this 
     password: {
-        type: DataTypes.STRING      
+        type: DataTypes.STRING,
+        allowNull: false      
     },
     // Here we'll pass a second "classMethods" object into the define method
     // This is for any additional configuration we want to give our models
+    
   },
   {
       // We're saying that we want our Author to have Posts

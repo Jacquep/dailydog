@@ -1,6 +1,25 @@
 .topImage {
 
-	max-height: 55vh;
+	max-height: 50vh;
 	width: 100%;
 
+}
+
+.blog-picture {
+
+	max-height: 30vh !important;
+
+}
+
+.blog-text {
+
+	display: inline;
+}
+
+.round {
+    border-radius: 50px;
+    border-style: solid;
+    color: black;
+    margin: 15px;
+    text-align: center;
 }

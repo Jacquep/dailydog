@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -9,8 +10,8 @@ var PORT = process.env.PORT || 8080;
 
 var sequelize = require("sequelize");
 
-// Requiring our models fseg
-var db = require("./models");
+// Requiring our models 
+var db = require("./models/index.js");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -23,16 +24,17 @@ app.use(express.static("./public"));
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
-var exphbs = require("express-handlebars");
+var exppug = require("pug");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 // Routes =============================================================
 
 require("./routes/html-routes.js")(app);
-require("./routes/signup-api-routes.js")(app);
-require("./routes/google-api-routes.js")(app);
+require("./routes/signup-routes.js")(app);
+require("./routes/signin-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {

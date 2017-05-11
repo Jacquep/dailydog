@@ -148,6 +148,7 @@
 
 .run {
     width: 100%;
+    height: 80%;
     display: block;
     margin: auto;
     
@@ -170,7 +171,7 @@ button {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    cursor: pointer;
+    cursor: url(./img/paw-black.png), auto;
     width: 100%;
 }
 
@@ -181,11 +182,14 @@ button {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {float:left;width:50%}
+.cancelbtn,.signupbtn {float:left;width:33%}
 
 /* Add padding to container elements */
 .container {
     padding: 16px;
+    margin-bottom: 10%;
+    padding-bottom: 40px;
+    
 }
 
 /* The Modal (background) */
@@ -210,7 +214,7 @@ button {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    height: 80%;
+    height: 100%;
 }
 
 /* The Close Button (x) */
@@ -261,8 +265,83 @@ p {
   text-align: center;
 }
 
+
+
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
-       width: 100%;
+       width: 33%;
+      margin-left: 36%;
     }
+}
+    
+@media only screen and (min-width:700px) {
+  
+
+  
+  .split span {
+    padding-right: 15px;
+    display:inline-block;
+    width:33%;
+    text-align: right;
+  }
+  
+  .split input {
+    display:inline-block;
+    width: 33%;
+    text-align: left;
+  }
+
+button {
+    width: 33%;
+    margin-left: 36%;
+}
+
+h2 {
+  text-align: center;
+}
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 33%;
+      margin-left: 36%;
+    }
+}
+    
+@media only screen and (max-width:700px) {
+  
+
+  
+  .split span {
+    padding-right: 15px;
+    display:inline-block;
+    width:20%;
+    text-align: right;
+  }
+  
+  .split input {
+    display:inline-block;
+    width: 60%;
+    text-align: left;
+  }
+
+button {
+    width: 33%;
+    margin-left: 25%;
+}
+
+h2 {
+  text-align: center;
+}
+
+img.avatar {
+    width: 60%;
+    border-radius: 50%;
+}
+}
+
+.custom {
+  cursor: url(./img/paw-black.png), auto;
+}
