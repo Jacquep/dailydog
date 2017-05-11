@@ -84,29 +84,7 @@
   color: #fefefe;
 }
 
-.form-registration-group .form-registration-social-button {
-  text-transform: uppercase;
-  font-size: 16px;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 1rem 0;
-  padding: 0.85em 1em;
-  -webkit-appearance: none;
-  border: 1px solid transparent;
-  border-radius: 0;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  font-size: 0.9rem;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid #3b5998;
-  color: #3b5998;
-  display: block;
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-  border-radius: 5000px;
-}
+
 
 [data-whatinput='mouse'] .form-registration-group .form-registration-social-button {
   outline: 0;
@@ -116,10 +94,10 @@
   background-color: transparent;
 }
 
-.form-registration-group .form-registration-social-button:hover, .form-registration-group .form-registration-social-button:focus {
-  border-color: #1e2d4c;
-  color: #1e2d4c;
-}
+/*.form-registration-group .form-registration-social-button:hover, .form-registration-group .form-registration-social-button:focus {*/
+/*  border-color: #1e2d4c;*/
+/*  color: #1e2d4c;*/
+/*}*/
 
 .form-registration-group .form-registration-social-button .fa {
   vertical-align: text-top;
@@ -207,7 +185,21 @@ button {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {float:left;width:33%}
+.cancelbtn,.signupbtn {
+  
+  width: 33%;
+  margin:auto;
+  margin-bottom: 10px;
+  display:block;
+  
+  padding: 15px;
+  
+  
+}
+
+.signupbtn {
+  background-color: green;
+}
 
 /* Add padding to container elements */
 .container {
@@ -263,6 +255,7 @@ button {
     content: "";
     clear: both;
     display: table;
+
 }
 
 .cancelbtn2 {
@@ -284,9 +277,9 @@ button {
 
 img.avatar {
     width: 40%
-    %;
     border-radius: 50%;
 }
+
 p {
   text-align: center;
 }
@@ -318,10 +311,6 @@ p {
     text-align: left;
   }
 
-/*button {*/
-/*    width: 33%;*/
-/*    margin-left: 36%;*/
-}
 
 h2 {
   text-align: center;
@@ -333,6 +322,7 @@ h2 {
     .cancelbtn, .signupbtn {
        width: 33%;
       margin-left: 36%;
+      
     }
 }
     
@@ -353,10 +343,6 @@ h2 {
     text-align: left;
   }
 
-/*button {*/
-/*    width: 33%;*/
-/*    margin-left: 25%;*/
-}
 
 h2 {
   text-align: center;

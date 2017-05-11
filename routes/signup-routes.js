@@ -14,7 +14,7 @@ module.exports = function(app) {
       // insert into our table. In this case we just we pass in an object with a text
       // and complete property (req.body)
 
-      bcrypt.hash(req.body.password, 10, function(err, hash) {
+      bcrypt.hash(req.body.password + "dogs", 10, function(err, hash) {
           if (err) {
               res.json(err);
           }
