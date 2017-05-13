@@ -67,6 +67,16 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
+#about-header {
+	font-family: 'Montserrat', Arial, Helvetica;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+.no-shadow {
+	text-shadow: none;
+}
+
 ul > li {
 	font-family: 'Montserrat', Arial, Helvetica;
 	color: #fff;
@@ -90,7 +100,7 @@ ul > li {
 	margin-top: 5px;
 }
 
-#dropdown1 > li > a {
+#dropdown1 > li > a, #dropdown2 > li > a {
 	font-family: 'Montserrat', Arial, Helvetica;
 	color: #000 !important;
 	text-shadow: none !important;
