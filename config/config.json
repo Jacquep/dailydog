@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Manny111",
+    "password": "beastie1258",
     "database": "daily_dog",
     "host": "127.0.0.1",
     "dialect": "mysql"

@@ -5,12 +5,13 @@
 // =============================================================
 var db = require("../models");
 var express = require('express');
+var auth = require("./auth");
 // Routes
 // =============================================================
 module.exports = function(app) {
   //READ DATA
   // GET route for getting all of the posts
-  app.get("/api/newsfeed", function(req, res,next) {
+  app.get("/api/newsfeed", auth,  function(req, res,next) {
     var query = {};
     if (req.query.doguser_id) {
       query.DogUserId = req.query.doguser_id;
@@ -25,7 +26,7 @@ module.exports = function(app) {
     });
   });
   // Get route for retrieving a single post
-  app.get("/api/dogposts/:id", function(req, res,next) {
+  app.get("/api/dogposts/:id", auth, function(req, res,next) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
@@ -41,7 +42,7 @@ module.exports = function(app) {
   });
   //CREATE DATA
   // POST route for creating a new post
-  app.post("/api/dogposts", function(req, res, next) {
+  app.post("/api/dogposts", auth, function(req, res, next) {
     //then when the db is finished saving the new post
     var newDogPost = {
       title: req.body.title,
@@ -60,7 +61,7 @@ module.exports = function(app) {
     })
   });
   // DELETE route for deleting posts
-  app.delete("/api/dogposts/:id", function(req, res, next) {
+  app.delete("/api/dogposts/:id", auth, function(req, res, next) {
     db.DogPost.destroy({
       where: {
         id: req.params.id
@@ -73,7 +74,7 @@ module.exports = function(app) {
   });
   //UPDATE
   // PUT route for updating posts
-  app.put("/api/dogposts", function(req, res, next) {
+  app.put("/api/dogposts", auth, function(req, res, next) {
     db.DogPost.update(
       req.body,
       {

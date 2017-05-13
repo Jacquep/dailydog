@@ -49,18 +49,18 @@ module.exports = function(app) {
   });
 
   // //require npm package
-  var session = require('client-sessions');
+  // var session = require('client-sessions');
 
-  //sep package specs
-  app.use(session({
-    cookieName: 'session',
-    secret: 'random_string_goes_here',
-    duration: 30 * 60 * 1000,
-    activeDuration: 5 * 60 * 1000,
-    httpOnly: true,
-    secure: true,
-    ephemeral: true
-  }));
+  // //sep package specs
+  // app.use(session({
+  //   cookieName: 'session',
+  //   secret: 'random_string_goes_here',
+  //   duration: 30 * 60 * 1000,
+  //   activeDuration: 5 * 60 * 1000,
+  //   httpOnly: true,
+  //   secure: true,
+  //   ephemeral: true
+  // }));
 
 
   //creating a cookie but not storing user data inside
@@ -79,22 +79,22 @@ module.exports = function(app) {
     });
   });
 
-// //this stores the users info on the cookie....Do I need this?
-// app.post('/login', function(req, res) {
-//   User.findOne({ email: req.body.email }, function(err, user) {
-//     if (!user) {
-//       res.render('login.jade', { error: 'Invalid email or password.' });
-//     } else {
-//       if (req.body.password === user.password) {
-//         // sets a cookie with the user's info
-///      req.session.user = user;
-//         res.redirect('/dashboard');
-//       } else {
-//         res.render('login.jade', { error: 'Invalid email or password.' });
-//       }
-//     }
-//   });
-// });
+//this stores the users info on the cookie....Do I need this?
+app.post('/login', function(req, res) {
+  User.findOne({ email: req.body.email }, function(err, user) {
+    if (!user) {
+      res.render('login.jade', { error: 'Invalid email or password.' });
+    } else {
+      if (req.body.password === user.password) {
+        // sets a cookie with the user's info
+      req.session.user = user;
+        res.redirect('/dashboard');
+      } else {
+        res.render('login.jade', { error: 'Invalid email or password.' });
+      }
+    }
+  });
+});
 
   //send to a templating engine? ie pug?
   app.get('/dashboard', function(req, res) {

@@ -33,29 +33,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 //validation and session handling
 var expressValidator = require("express-validator");
 var expressSession = require("express-session");
-var MySQLStore = require('express-mysql-session');
+//var MySQLStore = require('express-mysql-session');
 // (session)
 
-var options = {
-    host: 'localhost',
-    port: 3306,
-    user: 'session_test',
-    password: 'password',
-    database: 'session_test'
-};
+// var options = {
+//     host: 'localhost',
+//     port: 3306,
+//     user: 'session_test',
+//     password: 'password',
+//     database: 'session_test'
+//};
  
-var sessionStore = new MySQLStore(options);
+//var sessionStore = new MySQLStore(options);
 
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(expressSession(
   {
-    key: 'session_cookie_name',
+    cookie: {maxAge: 60000 * 60 * 24 * 7},
     secret: 'secret',
-    saveUninitialized: false, 
-    resave: false,
-    store: sessionStore
+    
   }));
+
+
 // app.use()
 
 // //validation and session handling
@@ -75,7 +75,7 @@ app.use(expressSession(
 //       min: 0,
 //       maxIdleTime: 120000
 //     }
-//};
+// };
 // var options = {
 //   host: 'localhost',
 //   port: 3306,

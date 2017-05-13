@@ -8,7 +8,8 @@ module.exports = function(app) {
 
 
   app.post("/api/doguser", function(req, res, next) {
-    console.log(req.body);
+    console.log(req.session, req.body, req.body.email);
+
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
@@ -28,13 +29,17 @@ module.exports = function(app) {
         imgURL: req.body.imgURL
       }).then(function(dbDogUser) {
         // We have access to the new DogUser as an argument inside of the callback function
+        req.session.id = dbDogUser.id;
+        console.log('about to set email', req.session.email)
+        req.session.email = dbDogUser.email;
+        console.log('set email', req.session.email)
+
         // res.json(dbDogUser);
         res.redirect("/newsfeed.html");
       }).catch(function(err) {
         var error = new Error(`error in signup api/doguser - ${err}`)
         console.error(error.message);
-        // res.json(error);
-        res.redirect("/newsfeed.html");
+        res.redirect("/");
       });
     });
   });
