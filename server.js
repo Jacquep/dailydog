@@ -62,7 +62,73 @@ app.use(expressSession(
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// //validation and session handling
+// var expressValidator = require("express-validator");
+// var expressSession = require("express-session");
+// var MySQLStore = require('express-mysql-session')(expressSession);
+// var SessionStore = require('express-sequelize-session')(expressSession.Store);
 
+// var options = {
+//     host: 'us-cdbr-iron-east-03.cleardb.net',
+//     port: 3306,
+//     user: 'b8ffc7d2029882',
+//     password: 'e13ffdcf',
+//     database: 'heroku_e274fdfc1bc8b44',
+//     pool: {
+//       max: 5,
+//       min: 0,
+//       maxIdleTime: 120000
+//     }
+//};
+// var options = {
+//   host: 'localhost',
+//   port: 3306,
+//   user: "", 
+//   database:'daily_dog'
+// }
+
+// var Sequelize = new sequelize(options); 
+
+// app.use(expressValidator());
+// app.use(cookieParser());
+// app.use(expressSession(
+//   {
+//     key: 'session_cookie_name',
+//     secret: 'secret',
+//     saveUninitialized: false,
+//     resave: false,
+//     store: new SessionStore(Sequelize)
+//   }));
+  
+  // db = new Sequelize(config.mysql.database, config.mysql.username, config.mysql.password, {
+  // host: config.mysql.host,
+  // dialect: config.mysql.dialect,
+  // dialectOptions: {
+  //   timeout: 30
+  // },
+  // pool: {
+  //   max: 5,
+  //   min: 0,
+  //   idle: 30000
+  // },
+  // });
+
+
+ 
+//var sessionStore = new MySQLStore(options);
+
+// app.use(expressValidator());
+// app.use(cookieParser());
+// app.use(expressSession(
+//   {name: 'session',
+//   cookie: { path: '/', httpOnly: true, secure: false, maxAge: null },
+//   secret: 'secrets',
+//   saveUninitialized: false, 
+//   resave: false,
+//   store: sessionStore,
+//   duration: 30 * 60 * 1000,
+//   activeDuration: 5 * 60 * 1000
+// }));
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 

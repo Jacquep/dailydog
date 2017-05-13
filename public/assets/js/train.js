@@ -26,7 +26,7 @@ $(document).ready(function(){
       location: sandiego,
       radius: '50000',
       types: [' pet_store'],
-      keyword: ['groomer'],
+      keyword: ['dog_training'],
     };
 
     service = new google.maps.places.PlacesService(map);

@@ -1,51 +1,283 @@
-.topImage {
+body { 
+  	font-family: 'Montserrat', cursive, Arial;
+	color: #000;
+}
 
-	max-height: 50vh;
-	width: 100%;
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Rock Salt', cursive, Arial;
+	text-shadow: 5px 5px 5px #353535; }
+
+#newsfeed-banner {
+	 background: url("../img/dogs-running.jpeg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#eat-banner {
+	 background: url("../img/ice-cream.jpg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#play-banner {
+	 background: url("../img/dogs-at-play.jpg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#grooming-banner {
+	 background: url("../img/bath.jpg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#train-banner {
+	 background: url("../img/dog-shake.jpg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+#profile-banner {
+	 background: url("../img/dog-computer.jpeg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+ul > li {
+	font-family: 'Montserrat', Arial, Helvetica;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.nav-wrapper > ul > li > a {
+	font-size: 13px;
+}
+
+#logo-container {
+	font-family: 'Rock Salt', cursive, Arial;
+	color: #fff;
+}
+
+#dog-logo {
+	height: 45px;
+}
+
+#logo-container > img {
+	margin-top: 5px;
+}
+
+#dropdown1 > li > a {
+	font-family: 'Montserrat', Arial, Helvetica;
+	color: #000 !important;
+	text-shadow: none !important;
+	text-transform: uppercase;
+}
+
+nav ul li.active, nav ul li:hover {
+    background-color: #fed136;
+    text-shadow: none;
+}
+
+nav ul li.active > a {
+    color: #000;
+    text-shadow: none;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+#local-search  {
+	background-color: #fff;
+	border-radius: 30px;
+	border: none;
+	padding-bottom: 12px;
+}
+
+#user-location, #user-location > label {
+	background: transparent;
+	margin-bottom: 0;
 
 }
 
-.blog-picture {
+#biz-image { 
+	width: 150px;
+	height: 150px;
+	background-size: cover;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+  	background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
 
-	max-height: 30vh !important;
+/*.biz-image {
+    position: relative;
+    float: left;
+    
+    background-size: cover;
+}*/
+
+/*NEWSFEED SPECIFIC*/
+
+#post-button {
+	font-family: 'Montserrat', Arial, Helvetica;
+	text-shadow: 5px 5px 5px #353535;
+}
+
+#post-button, #local-search {
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+#info-head {
+	font-family: 'Rock Salt', Arial, Helvetica;
+	text-shadow: none;
+	font-size: 16px;
+}
+
+.post-head, .post-subhead {
+	font-family: 'Montserrat', Arial, Helvetica;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+/* modal fields label color */
+#modal-title {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+.input-field label {
+ color: #000;
+}
+
+
+/*Adjustments for smaller screens*/
+
+@media screen and (max-width: 769px) and (min-width: 377px) {
+	
+	body { 
+		font-size: 20px;
+	}
+	
+	#logo-container {
+		font-size: 23px;
+	}	
+
+	#dog-logo {
+		height: 35px;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	h4, #page-subhead {
+		font-size: 23px;
+	}
+
+	#post-img {
+		height: 150px;
+	}
 
 }
 
-.blog-text {
+@media screen and (max-width: 376px) {
 
-	display: inline;
-}
+	body { 
+		font-size: 14px;
+	}
+		
+	#logo-container {
+		font-size: 15px;
+	}
 
-.round {
-    border-radius: 50px;
-    border-style: solid;
-    color: black;
-    margin: 15px;
-    text-align: center;
-}
+	#dog-logo {
+		height: 25px;
+	}		
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+	h1 {
+		font-size: 20px;
+	}
 
-a {
-  color: #00B7FF;
-}
-
-.small {
-    font-size: 10px;
-}
-
-label {
-    width: 150px;
-    display: inline-block;
-}
-
-input[type=text], textarea {
-    width: 250px;
-}
-
-.errors {
-    color: red;
+	h4, #page-subhead {
+		font-size: 17px;
+	}
+	
+	#post-img {
+		height: 100px;
+	}
 }
