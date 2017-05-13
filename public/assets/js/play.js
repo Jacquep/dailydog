@@ -6,7 +6,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#search-results").hide()
+  $("#search-results").hide();
 
   var map;
   var service;

@@ -1,6 +1,15 @@
 (function($){
   $(function(){
 
+ 
+    $("#new-post").hide();
+ 
+
+     $("#post-submit").on("click", function () {
+        $("#new-post").show();
+      });
+
+
     $('.button-collapse').sideNav();
     $(".dropdown-button").dropdown();
 
