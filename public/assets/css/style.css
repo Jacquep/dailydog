@@ -47,6 +47,16 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
+#train-banner {
+	 background: url("../img/dog-shake.jpg") no-repeat; 
+	  	-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
 #profile-banner {
 	 background: url("../img/dog-computer.jpeg") no-repeat; 
 	  	-webkit-background-size: cover;
