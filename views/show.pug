@@ -1,10 +1,5 @@
-extends ../layout
-
 block content
-  h1= DogPost.title
-  p= DogPost.body
-  a(href="../") &larr; Back
-  | | 
-  a(href="/DogPost/" + DogPost.id + "/edit") Edit DogPost
-  | | 
-  a(href="/DogPost/" + DogPOst.id + "/delete") Delete DogPost
+	each DogPost in DogPosts
+		block content
+			h1= DogPost.title
+			p= DogPost.body

@@ -58,6 +58,10 @@ app.use(expressSession(
 
 // app.use()
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // //validation and session handling
 // var expressValidator = require("express-validator");
 // var expressSession = require("express-session");
@@ -109,6 +113,7 @@ app.use(expressSession(
   // },
   // });
 
+
  
 //var sessionStore = new MySQLStore(options);
 
@@ -126,11 +131,7 @@ app.use(expressSession(
 // }));
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
-var exppug = require("pug");
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 // Routes =============================================================
 
@@ -138,11 +139,12 @@ require("./routes/html-routes.js")(app);
 require("./routes/signup-routes.js")(app);
 require("./routes/signin-routes.js")(app);
 require("./routes/dogpost-routes.js")(app);
+
 // require("./routes/doguser-routes.js")(app);
 
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync(/*{ force: true }*/).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

@@ -5,7 +5,11 @@
 // =============================================================
 var db = require("../models");
 var express = require('express');
+
 var auth = require("./auth");
+
+var pug = require('pug');
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -13,16 +17,19 @@ module.exports = function(app) {
   // GET route for getting all of the posts
   app.get("/api/newsfeed", auth,  function(req, res,next) {
     var query = {};
-    if (req.query.doguser_id) {
-      query.DogUserId = req.query.doguser_id;
-    }
+    // if (req.query.doguser_id) {
+    //   query.DogUserId = req.query.doguser_id;
+    // }
+
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
-    db.DogPost.findAll({
-      where: query,
-      include: [db.DogUser]
-    }).then(function(dbDogPost) {
-      res.json(dbDogPost);
+    db.DogPost.findAll().then(function(DogPosts) {
+      // var postsHtml = pug.renderFile('./dogpost.js', {
+      //   DogPosts: DogPosts,
+      // })
+      res.render('show', { DogPosts: DogPosts })
+      // console.log("hhhhhh", DogPosts);
+      // res.send(postsHtml);
     });
   });
   // Get route for retrieving a single post
@@ -70,7 +77,6 @@ module.exports = function(app) {
       res.json(dbDogPost);
       next();
     });
-
   });
   //UPDATE
   // PUT route for updating posts

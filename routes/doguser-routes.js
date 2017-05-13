@@ -10,6 +10,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/dogposts/:id", auth, function(req, res) {
+
     db.Author.findOne({
       where: {
         id: req.params.id
@@ -20,12 +21,14 @@ module.exports = function(app) {
   });
 
   app.post("/api/dogposts", auth, function(req, res) {
+
     db.Author.create(req.body).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
   });
 
   app.delete("/api/dogposts/:id", auth, function(req, res) {
+
     db.Author.destroy({
       where: {
         id: req.params.id
