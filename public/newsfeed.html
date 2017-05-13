@@ -1,89 +1,280 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Run With The Pack </title>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  </head>
-  <body>
-    
-    //needs to render all user all posts and provide option to add/delete/edit
--Display and button to direct to cms.html 
--display from database what was entered in CMS
--rendered from pug, needs pug specific file formatting
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Retriever | Community Bark</title>
 
-    
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <h1><li class="menu-text">Welcome to the Pack!</li></h1>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="createpost.html"><button>Create Post</button></a></li>
-          <li><a href="index.html">Home</a></li>
+  <!--Link to Favicon-->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+  <!-- Link to 'Font Awesome' -->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav class="black" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="about.html" class="brand-logo">Retriever
+        <img id="dog-logo" class="responsive" src="assets/img/icons/logo-blk.png"></a>
+        <ul class="right hide-on-med-and-down">
+
           <li><a href="eat.html">Eat</a></li>
           <li><a href="play.html">Play</a></li>
-          <li><a href="newsfeed.html">News</a></li>
-          <li><a href="grooming.html">Grooming</a></li>
-          
+          <li class="dropdown-button" data-activates="dropdown1"><a href="#">Run with the Pack<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="grooming.html">Clean Up</a></li>        
         </ul>
+
+        <!-- Dropdown Menu items -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">My Profile</a></li>
+          <li><a href="#">Community Bark</a></li>
+          <li><a href="#!">Find Fur Friends</a></li>
+        </ul>
+
+
+        <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+
+          <li><a href="eat.html">Eat</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="#">Run with the Pack</a></li>
+          <li><a href="grooming.html">Clean Up</a></li>  
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+  <div class="section no-pad-bot" id="newsfeed-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center amber-text">Community Bark</h1>
+      <div class="row center">
+        <h5 class="white-text header col s12 light" id="page-subhead">A Canine Bulletin Board</h5>
+      </div>
+      <div class="row center">
+        <a href="#modal1" id="post-button" class="btn-large waves-effect waves-light teal-accent-3">Create Post <i class="fa fa-paw"></i></a>
       </div>
     </div>
-    <!-- End Top Bar -->
+    <br><br><br><br>
 
-          <div class="row">
-            <div class="large-6 large-2 columns"></div>
-            <div class="large-6 large-8 columns"></div>
-            <div class="large-12 large-2 columns">
-              <img class="topImage" src="assets/img/dogpack3.jpeg">
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer black-text">
+          <div class="row black">
+            <div class="col s12 amber-text center">  
+              <h4 id="modal-title">Post to the Board</h4><br>
             </div>
           </div>
-    
-    <div class="row" id="content">
-      <div class="medium-12 columns">
-        <h3>Awesome blog post title <small>3/6/2015</small></h3>
-          <img class="blog-picture" src="http://placehold.it/850x350">
-          <h5 class="blog-text">Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</h5>
-          <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Author: Mike Mikers</a></li>
-              <li><a href="#"></a></li>
-            </ul>
+          <div class="modal-content">
+
+              <div class="row">
+                <form id="cms" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="My Pawsome Post Title" id="body" type="text" class="validate" data-length="40">
+                      <label for="title">Post Title</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="body" class="materialize-textarea" placeholder="Squirrel!" data-length="300"></textarea>
+                      <label for="body">Whatcha wanna bark about?</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option class="tag" value="event">Event</option>
+                        <option class="tag" value="lostfound">Lost &amp; Found</option>
+                        <option class="tag" svalue="rantrave">Rants &amp; Raves</option>
+                      </select>
+                      <label>Select Topic Category</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
           </div>
-        
+          <div class="modal-footer">
+
+            <input type="submit" class="btn modal-action modal-close waves-effect waves-teal btn-flat" value="Post" />
+            <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Post</a> -->
+          </div>
         </div>
 
-        
-      <div class="medium-3 columns" data-sticky-container>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <br><div class="divider"></div>
+      <div class="row">
+        <div class="col s12 center grey-text text-darken-3">
+         
+          <p id="info-head">Check out the latest posts below!</p>
+          <a href="#all-posts" class="btn btn-floating btn-large"><i class="fa fa-arrow-down"></i></a> 
+          <p>Discover events, recommendations, lost &amp; found pups, and more! Click the 'Create Post' button above to add your own post to the community. Posts are sorted by date / time created, with the newests posts at the top of the list.
+          </p>
+
+        </div>
+      </div>
+      <div class="divider"></div><br><br>
       
+      <!-- Begin Posts -->
+      <div class="row">
+        <div class="col s12">
+            <div class="col s12r">
+              <h5 class="header post-head">This Saturday: Poodles on Parade!</h5>
+              <h6 class="header post-subhead">PAWTHOR: Monty (by way of his human, Max)</h6>
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img id="post-img" class="responsive-img" src="assets/img/icons/dog1.png">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Check out this event fellow pooches!</p><br>
+                    <p>Poodles on Parade</p>
+                    <p>May 20, 2017<br>8:30 am - 12:00 pm<br>Webb Park in San Diego</p>
+                    <p><a href="http://www.spiritofthefourth.org/PoodlesOnParade.html" target="blank">Visit the Website</a> 
+                    </p><br>
+                    <p>Parade, contests, demonstrations, food trucks, vendors, raffle, beer, and more. All details are on the website. This event is open to anyone with a Standard Poodle (no toy poodles or miniature poodles). Participants MUST complete the registration forms located on the website. </p>
+                    <p>While the parade and contests are only for Standard Poodles, ALL well behaved dogs of all breeds (and their humans) are welcome to attend the event.</p>
+                     
+                  </div>
+                  <div class="card-action grey-text">
+                    Posted on 5/10/2017 at 10:32AM
+                    <span class="new badge teal-accent-3" data-badge-caption="event"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+            <div class="col s12r">
+              <h5 class="header post-head">World's Best Dog Toy</h5>
+              <h6 class="header post-subhead">PAWTHOR: Roxy (by way of her human, Sarah)</h6>
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img id="post-img" class="responsive-img" src="assets/img/icons/dog2.png">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Power chewers: Listen up! My name is Roxy and I love chewing toys. But my human hates to give me toys because I can tear through a tennis ball in minutes and plush toys in seconds. Finally I found the most amazing chew toy ever made! It's a rubbery bone made by a very tiny local company named SOCALDOGCO. The only place I've seen it so far is the Ocean Beach Dog Wash. You. Are. Welcome! </p>
+                     
+                  </div>
+                  <div class="card-action grey-text">
+                    Posted on 5/09/2017 at 8:08PM
+                    <span class="new badge teal-accent-3" data-badge-caption="rants & raves"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- End Posts -->
+
     </div>
-    
-    <div class="row column">
-      <ul class="pagination" role="navigation" aria-label="Pagination">
-        <li class="disabled">Previous</li>
-        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-        <li><a href="#" aria-label="Page 2">2</a></li>
-        <li><a href="#" aria-label="Page 3">3</a></li>
-        <li><a href="#" aria-label="Page 4">4</a></li>
-        <li class="ellipsis"></li>
-        <li><a href="#" aria-label="Page 12">12</a></li>
-        <li><a href="#" aria-label="Page 13">13</a></li>
-        <li><a href="#" aria-label="Next page">Next</a></li>
-      </ul>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <!-- <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="fa fa-paw"></i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+    <br><br>
+
+    <div class="section"> -->
+
+    </div>
+  </div>
+
+  <footer class="page-footer amber">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RETRIEVER</h5>
+          <p class="grey-text text-lighten-4">      
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-facebook"></i></a>&nbsp;
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-twitter"></i></a>&nbsp;
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-instagram"></i></a>&nbsp;
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Socialize</h5>
+          <ul>
+            <li><a class="white-text" href="#!">My Profile</a></li>
+            <li><a class="white-text" href="#!">Find Furry Friends</a></li>
+            <li><a class="white-text" href="#!">Pet Events</a></li>
+
+          </ul>
+        </div>
+        <div class="col l3 s12 right">
+          <h5 class="white-text">Localize</h5>
+          <ul>
+            <li><a class="white-text" href="eat.html">Eat</a></li>
+            <li><a class="white-text" href="play.html">Play</a></li>
+            <li><a class="white-text" href="grooming.html">Clean Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/cms.js"></script>
+
   </body>
 </html>
-
-
-
