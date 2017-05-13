@@ -22,8 +22,6 @@ $(document).ready(function() {
   else {
     getPosts();
   }
-
-
   // This function grabs posts from the database and updates the view
   function getPosts(author) {
     authorId = author || "";
