@@ -80,7 +80,7 @@
                 <form id="cms" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input placeholder="My Pawsome Post Title" id="body" type="text" class="validate" data-length="40">
+                      <input placeholder="My Pawsome Post Title" id="title" type="text" class="validate" data-length="40">
                       <label for="title">Post Title</label>
                     </div>
                   </div>
@@ -101,12 +101,12 @@
                       <label>Select Topic Category</label>
                     </div>
                   </div>
+                  <input type="submit" class="btn modal-action modal-close waves-effect waves-teal btn-flat"/>
                 </form>
               </div>
           </div>
           <div class="modal-footer">
 
-            <input type="submit" class="btn modal-action modal-close waves-effect waves-teal btn-flat" value="Post" />
             <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Post</a> -->
           </div>
         </div>
@@ -183,6 +183,8 @@
             </div>
         </div>
       </div>
+
+      <div id="content" class="header post-head"></div>
       <!-- End Posts -->
 
     </div>
@@ -286,6 +288,7 @@
   <script src="assets/js/materialize.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/cms.js"></script>
+  <script src="assets/js/newsfeed.js"></script>
 
   </body>
 </html>

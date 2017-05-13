@@ -29,7 +29,7 @@ $(document).ready(function() {
   function handleFormSubmit(event) {
     console.log("hello");
     event.preventDefault();
-    // Wont submit the post if we are missing a body, title, or author
+    // Wont submit the post if we are missing a body or title
     if (!titleInput.val().trim() || !bodyInput.val().trim()) {
       return;
     }
@@ -41,7 +41,7 @@ $(document).ready(function() {
       body: bodyInput
         .val()
         .trim(),
-      DogUserId: authorSelect.val()
+      DogUserId: 1
     };
 
     // If we're updating a post run updatePost to update a post
@@ -57,8 +57,8 @@ $(document).ready(function() {
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(dogpost) {
-    $.dogpost("/api/dogposts", dogpost, function() {
-      window.location.href = "/dogposts";
+    $.post("/api/dogposts", dogpost, function() {
+      window.location.href = "/newsfeed.html";
     });
   }
 

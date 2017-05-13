@@ -75,7 +75,7 @@
             <div class="modal-content">
                 <div class="row">
                     <form class="col s12" action="/api/doguser" method="post">
-                    <input class="form-registration-submit-button" type="submit" value="CREATE AN ACCOUNT" onclick="document.getElementById('id01').style.display='block'">
+                    <!-- <input class="form-registration-submit-button" type="submit" value="CREATE AN ACCOUNT" onclick="document.getElementById('id01').style.display='block'"> -->
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="post-body" type="text" class="validate" data-length="50">
@@ -88,19 +88,19 @@
                                 <label for="post-body">Password</label>
                             </div>
                         </div>
+                        <input type="submit" class="modal-action modal-close waves-effect waves-teal btn-flat" value="Login" />
                     </form>
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="submit" class="modal-action modal-close waves-effect waves-teal btn-flat" value="Login" />
                 <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Post</a> -->
             </div>
         </div>
         <!-- Modal Structure 3-->
         <div id="modal3" class="modal modal-fixed-footer black-text">
             <div class="row black">
-                <form class="col s12" id="cms" action="/api/signin" method="post">
-                <input type="submit" value="SIGN IN" onclick="document.getElementById('id02').style.display='block'">
+                <form class="col s12" action="/api/doguser" method="post">
+                <!-- <input type="submit" value="SIGN IN" onclick="document.getElementById('id02').style.display='block'"> -->
                     <div class="row black">
                         <div class="col s12 amber-text center">
                             <h4 id="modal-title">Create An Account!</h4>
@@ -110,51 +110,51 @@
                     <div class="modal-content">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="60"></textarea>
+                                <textarea name="dog_name" id="post-body" class="materialize-textarea" data-length="60"></textarea>
                                 <label for="post-body">Dog Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="post-body" type="text" class="validate" data-length="100">
+                                <input name="breed" id="post-body" type="text" class="validate" data-length="100">
                                 <label for="post-title">Breed</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="40"></textarea>
+                                <textarea name="age" id="post-body" class="materialize-textarea" data-length="40"></textarea>
                                 <label for="post-body">Age</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="100"></textarea>
+                                <textarea name="fav_activity" id="post-body" class="materialize-textarea" data-length="100"></textarea>
                                 <label for="post-body">Favorite Past Time</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="60"></textarea>
+                                <textarea name="owner" id="post-body" class="materialize-textarea" data-length="60"></textarea>
                                 <label for="post-body">Owner Name</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="60"></textarea>
+                                <textarea name="email" id="post-body" class="materialize-textarea" data-length="60"></textarea>
                                 <label for="post-body">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="post-body" class="materialize-textarea" data-length="60"></textarea>
+                                <textarea name="password" id="post-body" class="materialize-textarea" data-length="60"></textarea>
                                 <label for="post-body">Password</label>
                             </div>
                         </div>
+                        <input type="submit" class="modal-action modal-close waves-effect waves-teal btn-flat" value="SignUp" />
                     </form>
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="button" class="modal-action modal-close waves-effect waves-teal btn-flat" value="SignUp" />
                 <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Post</a> -->
             </div>
         </div>

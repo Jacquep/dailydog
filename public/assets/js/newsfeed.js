@@ -4,6 +4,7 @@ $(document).ready(function() {
 		method: "GET",
 		url: "/api/newsfeed/",
 	}).done(function(newsfeed) {
+		console.log(newsfeed);
 		$("#content").append(newsfeed);
 
     });
