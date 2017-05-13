@@ -6,7 +6,6 @@ module.exports = function(app) {
       res.json(dbAuthor);
     });
   });
-
   app.get("/api/dogposts/:id", function(req, res) {
     db.Author.findOne({
       where: {
@@ -16,13 +15,11 @@ module.exports = function(app) {
       res.json(dbAuthor);
     });
   });
-
   app.post("/api/dogposts", function(req, res) {
     db.Author.create(req.body).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
   });
-
   app.delete("/api/dogposts/:id", function(req, res) {
     db.Author.destroy({
       where: {

@@ -68,7 +68,6 @@ module.exports = function(app) {
       res.json(dbDogPost);
       next();
     });
-
   });
 
   // PUT route for updating posts

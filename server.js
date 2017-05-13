@@ -58,14 +58,14 @@ app.use(expressSession(
   }));
 // app.use()
 
-
-// override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
-var exppug = require("pug");
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+
 
 // Routes =============================================================
 
@@ -73,11 +73,12 @@ require("./routes/html-routes.js")(app);
 require("./routes/signup-routes.js")(app);
 require("./routes/signin-routes.js")(app);
 require("./routes/dogpost-routes.js")(app);
+
 // require("./routes/doguser-routes.js")(app);
 
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync(/*{ force: true }*/).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
