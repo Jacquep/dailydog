@@ -43,8 +43,8 @@ $(document).ready(function(){
         var name = response[i].name;
     		var location = response[i].vicinity;
         var image = response[i].photos[0].getUrl({'maxWidth': 300, 'maxHeight': 200});
-        var bizURL = response[i].website; 
-        // console.log(bizURL);
+        var bizURL = response[i].url; 
+        console.log(bizURL);
     		
     		var bizDiv = $("<div>");
     		bizDiv.attr("class","col s12");

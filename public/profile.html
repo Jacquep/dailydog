@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Retriever | Play!</title>
+  <title>Retriever | My Profile</title>
 
   <!--Link to Favicon-->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico">
@@ -68,56 +68,97 @@
     </nav>
   </div>  
   <!-- End Navbar -->
+  
+      
+	  <!-- Begin Profile -->
+	  <div class="row">
+	    <div class="col s12">
+	        <div class="col s8 offset-s2"><br>
+	          <h5 class="header post-head">Monty</h5><br>
 
-  <!-- Begin Banner -->
-  <div class="section no-pad-bot" id="play-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center amber-text">Let the Dog Run Free!</h1>
-      <div class="row center">
-        <h5 class="white-text header col s12 light" id="page-subhead">Discover Doggy Playgrounds, Parks, &amp; Beaches</h5>
-      </div>
-      <div class="row center">
-        <form>
-          <div class="input-field col s6 offset-s3 valign-wapper" id="local-search">
-            <input id="user-location" type="search" required placeholder="Enter search location">
-            <label class="label-icon" for="user-location" id="search-button"><a id="get-results" href="#" class="btn btn-floating"><i class="fa fa-search"></i></a></label>
-          </div>
+	          <h6 class="header post-subhead">Owned by: Maxwell L.</h6>
 
-        </form>
-        
-        <br><br><br><br><br><br><br>
-      </div>
+	          <div class="card horizontal">
+	            <div class="card-image">
+	              <img id="post-img" class="responsive-img" src="assets/img/icons/dog1.png">
+	            </div>
+	            <div class="card-stacked">
+	              <div class="card-content">
+	                <p><span class="bold-text">Breed:</span> Beagle / Cocker Spaniel</p><br>
+	                <p><span class="bold-text">Age:</span> 6 human years</p><br>
+	                <p><span class="bold-text">Favorite Pastime:</span> Chasing My Ball</p><br>
+	                <p><span class="bold-text">About Me:</span> <br><br>I'm a wily middle aged mutt that howls like a beagle and has the smugness of a cocker spaniel. I may be six years old but I have puppy energy and can never get enough play time. Find me at the OB Dog Beach or digging under my owners' blankets.</p>
+
+	                
+	                 
+	              </div>
+
+	            </div>
+	          </div>
+	        </div>
+	    </div>
+	  </div>
+
+	  
+
+      <div id="content" class="header post-head"></div>
+      <!-- End Posts -->
+
     </div>
   </div>
-  <!-- End Banner -->
 
-  <!-- Begin Pre-Search Text -->
+
   <div class="container">
-
-  </div>
-  <!-- End Pre-Search Text -->
-
-  <!-- Begin API Results -->
-  <div class="container" id="search-results">
     <div class="section">
-      <div class="row">        
-        <div class="col s12 center grey-text text-darken-3">    
-          <div class="divider"></div>     
-     <!--      <p id="info-head">Enter a location to search above.<br><br>Your search results will appear here!</p>     --> 
-          <p><img src="assets/img/icons/play.png" width="100"></p> 
-          <div class="divider"></div>
+
+      <!--   Icon Section   -->
+      <!-- <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="fa fa-paw"></i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
         </div>
 
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
       </div>
+
     </div>
 
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+     <script src="assets/js/newsfeed.js"></script>
+  </body>
+</html>
+
+
+
+    <div class="section"> -->
+
+    </div>
   </div>
-
-  <!-- End API Results -->
-
-   <div id='map'></div>
-
 
   <footer class="page-footer amber">
     <div class="container">
@@ -160,12 +201,11 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="assets/js/materialize.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/play.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQzaVQnTdb-yIAsWjmcgGATEGmKPiiRxk&libraries=places"></script>
-
+  <script src="assets/js/cms.js"></script>
+  <script src="assets/js/newsfeed.js"></script>
 
   </body>
 </html>
