@@ -1,97 +1,159 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Retriever | Play!</title>
 
-    <title>PLAY</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  </head>
-  <body>
-    
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text"></li>
+  <!--Link to Favicon-->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/icons/favicon.ico">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
+  <!-- Link to 'Font Awesome' -->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <!-- Begin Navbar -->
+  <div class="navbar-fixed">
+    <nav class="black" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="about.html" class="brand-logo">Retriever
+        <img id="dog-logo" class="responsive" src="assets/img/icons/logo-blk.png"></a>
+        <ul class="right hide-on-med-and-down">
+
+          <li><a href="eat.html">Eat</a></li>
+          <li><a class="active" href="play.html">Play</a></li>
+          <li class="dropdown-button" data-activates="dropdown1"><a href="#">Run with the Pack<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="grooming.html">Clean Up</a></li>        
         </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
+
+        <!-- Dropdown Menu items -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">My Profile</a></li>
+          <li><a href="newsfeed.html">Community Bark</a></li>
+          <li><a href="#!">Find Fur Friends</a></li>
+        </ul>
+
+
+        <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+
           <li><a href="eat.html">Eat</a></li>
           <li><a href="play.html">Play</a></li>
-          <li><a href="newsfeed.html">News</a></li>
-          <li><a href="grooming.html">Grooming</a></li>
+          <li><a href="#">Run with the Pack</a></li>
+          <li><a href="grooming.html">Clean Up</a></li>  
         </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>  
+  <!-- End Navbar -->
+
+  <!-- Begin Banner -->
+  <div class="section no-pad-bot" id="play-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center amber-text">Let the Dog Run Free!</h1>
+      <div class="row center">
+        <h5 class="white-text header col s12 light" id="page-subhead">Discover Doggy Playgrounds, Parks, &amp; Beaches</h5>
+      </div>
+      <div class="row center">
+        <form>
+          <div class="input-field col s6 offset-s3 valign-wapper" id="local-search">
+            <input id="user-location" type="search" required placeholder="Enter search location">
+            <label class="label-icon" for="user-location" id="search-button"><a href="#" class="btn btn-floating"><i class="fa fa-search"></i></a></label>
+          </div>
+
+        </form>
+        
+        <br><br><br><br><br><br><br>
       </div>
     </div>
-    <!-- End Top Bar -->
-
-<div class="row">
-  <div class="large-12 large-2 columns">
-    <img class="topImage" src="assets/img/dogsplaying2.jpeg">
   </div>
-</div>
-    
-<div class="row" id="content">
+  <!-- End Banner -->
 
-    
+  <!-- Begin Pre-Search Text -->
+  <div class="container">
 
-      <!--   <div class="blog-post">
-          <h3>Awesome Dog Beach <small>Del Mar</small></h3>      
-          <div class="callout">
-            <ul class="menu simple">
-              <li><a href="#">Author: Mike Mikers</a></li>
-              <li><a href="#">Comments: 3</a></li>
-            </ul>
-          </div>
-        </div> -->      
-  
-</div>
+  </div>
+  <!-- End Pre-Search Text -->
 
-<!-- <div class="medium-3 columns" data-sticky-container>
-        <div class="sticky" data-sticky data-anchor="content">
-          <h4>Categories</h4>
+  <!-- Begin API Results -->
+  <div class="container" id="search-results">
+    <div class="section">
+      <div class="row">        
+        <div class="col s12 center grey-text text-darken-3">    
+          <div class="divider"></div>     
+     <!--      <p id="info-head">Enter a location to search above.<br><br>Your search results will appear here!</p>     --> 
+          <p><img src="assets/img/icons/play.png" width="100"></p> 
+          <div class="divider"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- End API Results -->
+
+   <div id='map'></div>
+
+
+  <footer class="page-footer amber">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RETRIEVER</h5>
+          <p class="grey-text text-lighten-4">      
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-facebook"></i></a>&nbsp;
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-twitter"></i></a>&nbsp;
+            <a class="btn-floating btn-large waves-effect waves-light black" href="#"><i class="fa fa-instagram"></i></a>&nbsp;
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Socialize</h5>
           <ul>
-            <li><a href="#">Skyler</a></li>
-            <li><a href="#">Jesse</a></li>
-            <li><a href="#">Mike</a></li>
-            <li><a href="#">Holly</a></li>
+            <li><a class="white-text" href="#!">My Profile</a></li>
+            <li><a class="white-text" href="#!">Find Furry Friends</a></li>
+            <li><a class="white-text" href="#!">Pet Events</a></li>
+
           </ul>
-
-          <h4>Authors</h4>
+        </div>
+        <div class="col l3 s12 right">
+          <h5 class="white-text">Localize</h5>
           <ul>
-            <li><a href="#">Skyler</a></li>
-            <li><a href="#">Jesse</a></li>
-            <li><a href="#">Mike</a></li>
-            <li><a href="#">Holly</a></li>
+            <li><a class="white-text" href="eat.html">Eat</a></li>
+            <li><a class="white-text" href="play.html">Play</a></li>
+            <li><a class="white-text" href="grooming.html">Clean Up</a></li></li>
           </ul>
         </div>
       </div>
     </div>
-    
-    <div class="row column">
-      <ul class="pagination" role="navigation" aria-label="Pagination">
-        <li class="disabled">Previous</li>
-        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-        <li><a href="#" aria-label="Page 2">2</a></li>
-        <li><a href="#" aria-label="Page 3">3</a></li>
-        <li><a href="#" aria-label="Page 4">4</a></li>
-        <li class="ellipsis"></li>
-        <li><a href="#" aria-label="Page 12">12</a></li>
-        <li><a href="#" aria-label="Page 13">13</a></li>
-        <li><a href="#" aria-label="Next page">Next</a></li>
-      </ul>
-    </div> -->
+    <div class="footer-copyright">
+      <div class="container">
 
-    <div id='map'></div>
-    
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQzaVQnTdb-yIAsWjmcgGATEGmKPiiRxk&libraries=places"></script>
-    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
-    <script src="assets/js/play.js"></script>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/play.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQzaVQnTdb-yIAsWjmcgGATEGmKPiiRxk&libraries=places"></script>
+
+
   </body>
 </html>
