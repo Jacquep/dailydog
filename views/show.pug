@@ -1,5 +1,9 @@
 block content
 	each DogPost in DogPosts
 		block content
-			h1= DogPost.title
-			p= DogPost.body
+			h5= DogPost.title
+			h6= "Pawthor: Katie"
+			div.card= DogPost.body
+			div.card-action= "Posted on 5/10/2017 at 10:32AM"
+
+					

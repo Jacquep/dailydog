@@ -101,6 +101,7 @@ initialize()
 
  $("#get-results").on("click", function () {
       $("#search-results").show();
+      $("#pre-search").hide();
  });
 });
 
