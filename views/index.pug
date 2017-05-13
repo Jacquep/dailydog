@@ -4,10 +4,9 @@ block content
   h1= title
   p Listing all articles
   p
-    a(href="/articles/new") Create New Article
+    a(href="/DogPost/new") Create New DogPost
   
-  each article in articles
-    h2= article.title
-    include by_line
-    p= article.shortDescription()
-    a(href = "/articles/" + article.id) Read More &rarr;
+  each DogPost in Dogposts
+    h2= DogPost.title
+    p= DogPost
+    a(href = "/DogPost/" + DogPost.id) Read More &rarr;

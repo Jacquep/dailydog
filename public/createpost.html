@@ -20,27 +20,44 @@
     </div>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<form id="cms" method= "POST" action="/api/dogposts">
+				<!-- <form id="cms" method= "POST" action="/api/dogposts"> -->
+				<form id="createPost">
 					<div class="form-group">
-						<label for="title">What's this about?:</label>
+						<label for="title">Title:</label>
 						<input placeholder="Title here" type="text" class="form-control" id="title">
 						<br />
 						<label for="body">What's on your mind?:</label>
 						<textarea placeholder="Squirrel!" class="form-control" rows="10" id="body"></textarea>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="topic">What's this about</label>
 							<select class="form-control" id="tag">
-  						</select>
+  						</select> -->
 						</div>
 						<br />
-						<button type="submit" class="btn btn-success submit">Come here!</button>
+						<div>
+						<input
+							type="submit"
+							value="Post"
+							class="btn btn-success submit"
+						/>
+						<input
+							type="submit"
+							value="Update"
+							class="btn btn-success submit"
+						/>
+						<input
+							type="submit"
+							value="Delete"
+							class="btn btn-success submit"
+						/>
+						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 	<!-- Custom Script -->
-	<script src="js/cms.js" type="text/javascript"></script>
+	<script src="assets/js/cms.js" type="text/javascript"></script>
 
 </body>
 

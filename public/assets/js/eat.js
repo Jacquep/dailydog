@@ -1,31 +1,57 @@
 $(document).ready(function(){
-	// URL to use in ajax GET request 	
-	//var queryURL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.8549494,-117.2541698&radius=50000&type=restaurant&keyword=dog_friendly&key=AIzaSyAZD1z7QkFQS450oXJL0bbCMw_NSzlVS-E';
-	var queryURL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBz76vzz7WYfzokwcZw8p2kFUotx8wyoRg&callback=initMap';
-	// Perform AJAX GET request to get data from an Google API
-	$.ajax({
-        url: queryURL,
-        method: "GET",
-        dataType: 'json',
-        cache: false
-	}).done(function hndlr(response) {
-		console.log("response",response);
-		for (var i = 0; i < response.results.length; i++) {
-			var name = response.results[i].name;
-			var location = response.results[i].vicinity;
-		
-			var restaurant = $("<div>");
-			restaurant.attr("class","round")
 
-			var restaurantName = $("<h5>");
-			restaurantName.text(name);
-			var restaurantLocation = $("<p>");
-			restaurantLocation.text(location);
 
-			restaurantName.appendTo(restaurant);
-			restaurantLocation.appendTo(restaurant);
+  var map;
+  var service;
+  var infowindow;
 
-			$("#content").append(restaurant);
-		}
-	})
+  function initialize() {
+
+
+    var sandiego = new google.maps.LatLng(32.8549494,-117.2541698);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: sandiego,
+      zoom: 15
+    });
+    
+   
+    var request = {
+      location: sandiego,
+      radius: '50000',
+      types: ['restaurant'],
+      keyword: ['dog_friendly'],
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+
+   
+  }
+
+  function callback(response,status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < response.length; i++) {
+
+    
+        var name = response[i].name;
+    		var location = response[i].vicinity;
+    		
+    		var restaurant = $("<div>");
+    		restaurant.attr("class","round")
+
+    		var restaurantName = $("<h5>");
+    		restaurantName.text(name);
+    		var restaurantLocation = $("<p>");
+    		restaurantLocation.text(location);
+
+    		restaurantName.appendTo(restaurant);
+    		restaurantLocation.appendTo(restaurant);
+
+    		$("#content").append(restaurant);     
+      }
+    }
+ }
+
+ initialize();
 });

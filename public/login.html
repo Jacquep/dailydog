@@ -6,178 +6,147 @@
     </head>
 <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
 <body>
     
     <!-- Start Top Bar -->
     <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text"></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="eat.html">Eat</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="newsfeed.html">News</a></li>
-          <li><a href="grooming.html">Grooming</a></li>
-        </ul>
-      </div>
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text"></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eat.html">Eat</a></li>
+                <li><a href="play.html">Play</a></li>
+                <li><a href="newsfeed.html">News</a></li>
+                <li><a href="grooming.html">Grooming</a></li>
+            </ul>
+        </div>
     </div>
     <!-- End Top Bar -->
-<div class="form-registration">
-    <figure class="form-registration-img">
-        <img src="https://s-media-cache-ak0.pinimg.com/originals/1f/3d/87/1f3d871e7b0ed820fa0345465c8aa672.jpg" alt="run" class="run" />
-        <figcaption class="form-registration-img-caption">Come Run with the Pack.</figcaption>
-    </figure>
-    <form class="form-registration-group" action="POST">
-        <input class="form-registration-submit-button" type="submit" value="CREATE AN ACCOUNT" onclick="document.getElementById('id01').style.display='block'">
-        <!--  <button  style="width:auto;">Sign Up</button> -->
-        <div id="id01" class="modal">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-            <form>
-                <div class="form-icons">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
-                    <form class="modal-content animate" action="/action_page.php">
-                        <div class="container">
-                            <h2>Create An Account</h2>
-                            <div class="split">
-                                    <span>
-                                    <label><b>Doggie URL</b></label>
-                                </span>
+    <div class="form-registration">
+        <figure class="form-registration-img">
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/1f/3d/87/1f3d871e7b0ed820fa0345465c8aa672.jpg" alt="run" class="run" />
+            <figcaption class="form-registration-img-caption">Come Run with the Pack.</figcaption>
+        </figure>
+        <form class="form-registration-group" action="/api/doguser" method="post">
+            <input class="form-registration-submit-button" type="submit" value="CREATE AN ACCOUNT" onclick="document.getElementById('id01').style.display='block'">
+            <!--  <button  style="width:auto;">Sign Up</button> -->
+            <div id="id01" class="modal">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+                <form>
+                    <div class="form-icons">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="container">
+                                <h2>Create An Account</h2>
+                                <div class="split">
+                                    <span><label><b>Doggie URL</b></label></span>
                                     <input type="text" placeholder="Insert Doggie Picture URL" name="url" required>
                                     <br>
                                 </div>
-                            <div class="split">
-                                <span>
-                                    <label><b>Name</b></label>
-                                </span>
-                                <input type="text" placeholder="Dog Name" name="name" required><br>
-                            </div>
+                                <div class="split">
+                                    <span><label><b>Name</b></label></span>
+                                    <input type="text" placeholder="Dog Name" name="dog_name" required>
+                                    <br>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Breed</b></label></span>
+                                    <input type="text" placeholder="Breed" name="breed" required>
+                                    <br>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Age</b></label></span>
+                                    <input type="text" placeholder="Age" name="age" required>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Favorite Past Time</b></label></span>
+                                    <input type="text" placeholder="Playing Fetch" name="fav_activity" required>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Owner</b></label></span>
+                                    <input type="text" placeholder="Owner Name" name="owner" required>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Email</b></label></span>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+                                </div>
+                                <div class="split">
+                                    <span><label><b>Password</b></label></span>    
+                                    <input type="password" placeholder="Enter Password" name="password" required>
+                                </div>
                             
-                            <div class="split">
-                                <span>
-                                    <label><b>Breed</b></label>
-                                </span>
-                                <input type="text" placeholder="Breed" name="breed" required><br>
+                                <p><input type="checkbox" checked="checked"> Remember me</p>
+                                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                                <div class="clearfix">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                </div>
                             </div>
-                            
-                            <div class="split">
-                                <span>
-                                    <label><b>Age</b></label>
-                                </span>
-                                <input type="text" placeholder="Age" name="age" required>
-                            </div>
-                            
-                             <div class="split">
-                                <span> 
-                                    <label><b>Favorite Past Time</b></label>
-                                </span>
-                                <input type="text" placeholder="Playing Fetch" name="fpt" required>
-                             </div>
-                             
-                             <div class="split">
-                                <span>
-                                    <label><b>Owner</b></label>
-                                </span>
-                                <input type="text" placeholder="Owner Name" name="owner" required>
-                            </div>
-                            
-                             <div class="split">
-                                <span>
-                                    <label><b>Email</b></label>
-                                </span>
-                                <input type="text" placeholder="Enter Email" name="email" required>
-                           </div>
-                           
-                           <div class="split">
-                                <span>
-                                    <label><b>Password</b></label>
-                                </span>    
-                                <input type="password" placeholder="Enter Password" name="psw" required>
-                            </div>
-                            
-                            <p><input type="checkbox" checked="checked"> Remember me</p>
-                            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-                            <div class="clearfix">
-                                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                <button type="submit" class="signupbtn">Sign Up</button>
-                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById('id01');
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+                </form>
+            </div>
+        </form>
+        <form class="form-registration-group" action="/api/signin" method="post">
+            <input class="form-registration-submit-button" type="submit" value="SIGN IN" onclick="document.getElementById('id02').style.display='block'">
+            <form class="form-registration-group" action="">
+                <div id="id02" class="modal">
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src="./assets/boo.jpg" alt="Avatar" class="avatar">
                         </div>
+
+                        <div class="container">
+                            <div class="split">
+                                <span><label><b>E-Mail</b></label></span>
+                                <input type="text" placeholder="Enter E-Mail" name="email" required>
+                            </div>
+                            <div class="split">
+                                <span><label><b>Password</b></label></span>
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                            </div>
+                            <button type="submit">Login</button>
+                            <p><input type="checkbox" checked="checked"> Remember me</p>
+                        </div>
+                        <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a>|<a href="#">Privacy</a></p>
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById('id02');
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+                        </script>
                     </form>
                 </div>
-                <script>
-                // Get the modal
-                var modal = document.getElementById('id01');
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-                </script>
-                
-            </form>
-        </div>
-    </form>
-    <form class="form-registration-group" action="">
-        <input class="form-registration-submit-button" type="submit" value="SIGN IN" onclick="document.getElementById('id02').style.display='block'"><form class="form-registration-group" action="">
-     
-
-<div id="id02" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="./assets/boo.jpg" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-         <div class="split">
-            <span>
-                <label><b>E-Mail</b></label>
-            </span>
-              <input type="text" placeholder="Enter E-Mail" name="email" required>
-        </div>
-        
-         <div class="split">
-            <span>
-                  <label><b>Password</b></label>
-            </span>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        </div>
-       
-        
-              <button type="submit">Login</button>
-            </span>
-             <p><input type="checkbox" checked="checked"> Remember me</p>
-        
-        </div>
-    
     <!--<div class="container" style="background-color:#f1f1f1">-->
     <!--  <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn2">Cancel</button>-->
     <!--  <span class="fpsw">Forgot password?</a></span>-->
     <!--</div>-->
-  </form>
-</div>
+            </form>
+        </form>
+    </div>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id02');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 
 </body>
-    <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a>|<a href="#">Privacy</a></p>
-    </form>
-</div>
-
 </html>
