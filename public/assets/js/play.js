@@ -6,6 +6,7 @@ $(document).ready(function(){
     }
   });
 
+  $("#search-results").hide()
 
   var map;
   var service;
@@ -44,7 +45,7 @@ $(document).ready(function(){
     		var location = response[i].vicinity;
         var image = response[i].photos[0].getUrl({'maxWidth': 300, 'maxHeight': 200});
         var bizURL = response[i].website; 
-        // console.log(bizURL);
+        console.log(bizURL);
     		
     		var bizDiv = $("<div>");
     		bizDiv.attr("class","col s12");
@@ -66,6 +67,7 @@ $(document).ready(function(){
       
     		var bizName = $("<h6>");
     		bizName.text(name);
+        bizName.attr("class", "no-shadow");
 
     		var bizLocation = $("<p>");
     		bizLocation.text(location);
@@ -95,5 +97,12 @@ $(document).ready(function(){
     }
  }
 
- initialize();
+initialize() 
+
+ $("#get-results").on("click", function () {
+      $("#search-results").show();
+ });
 });
+
+
+
