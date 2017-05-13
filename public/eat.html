@@ -81,7 +81,7 @@
         <form>
           <div class="input-field col s6 offset-s3 valign-wapper" id="local-search">
             <input id="user-location" type="search" required placeholder="Enter search location">
-            <label class="label-icon" for="user-location" id="search-button"><a href="#" class="btn btn-floating"><i class="fa fa-search"></i></a></label>
+            <label class="label-icon" for="user-location" id="search-button"><a id="get-results" href="#" class="btn btn-floating"><i class="fa fa-search"></i></a></label>
           </div>
 
         </form>
@@ -99,6 +99,21 @@
   <!-- End Pre-Search Text -->
 
   <!-- Begin API Results -->
+    <div class="container" id="pre-search">
+    <div class="section">
+      <div class="row">        
+        <div class="col s12 center grey-text text-darken-3">    
+          <div class="divider"></div>     
+          <p id="info-head">Enter a location to search above.<br><br>Your search results will appear here!</p>     
+          <p><img src="assets/img/icons/eat.png" width="100"></p> 
+          <div class="divider"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
   <div class="container" id="search-results">
     <div class="section">
       <div class="row">        

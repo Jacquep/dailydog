@@ -222,10 +222,20 @@ nav ul li.active > a {
 	font-size: 16px;
 }
 
-.post-head, .post-subhead {
+.post-head, .post-subhead, #content h5, #content h6 {
 	font-family: 'Montserrat', Arial, Helvetica;
 	text-shadow: none;
 	font-weight: bold;
+}
+
+#content p {
+	font-family: 'Montserrat', Arial, Helvetica;
+	text-shadow: none;
+	font-weight: normal;
+}
+
+.card::before { 
+  content: url("../img/icon/dog3.png");
 }
 
 /* modal fields label color */

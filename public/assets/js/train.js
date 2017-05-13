@@ -6,6 +6,7 @@ $(document).ready(function(){
     }
   });
 
+  $("#search-results").hide()
 
   var map;
   var service;
@@ -25,7 +26,7 @@ $(document).ready(function(){
     var request = {
       location: sandiego,
       radius: '50000',
-      types: [' pet_store'],
+      types: ['pet_store'],
       keyword: ['dog_training'],
     };
 
@@ -41,13 +42,13 @@ $(document).ready(function(){
 
     
         var name = response[i].name;
-    		var location = response[i].vicinity;
+        var location = response[i].vicinity;
         var image = response[i].photos[0].getUrl({'maxWidth': 300, 'maxHeight': 200});
         var bizURL = response[i].website; 
-        // console.log(bizURL);
-    		
-    		var bizDiv = $("<div>");
-    		bizDiv.attr("class","col s12");
+        console.log(bizURL);
+        
+        var bizDiv = $("<div>");
+        bizDiv.attr("class","col s12");
 
         var bizDiv2 = $("<div>");
         bizDiv2.attr("class","card horizontal");
@@ -64,11 +65,12 @@ $(document).ready(function(){
         var bizDetails2 = $("<div>");
         bizDetails2.attr("class","card-content");
       
-    		var bizName = $("<h6>");
-    		bizName.text(name);
+        var bizName = $("<h6>");
+        bizName.text(name);
+        bizName.attr("class", "no-shadow");
 
-    		var bizLocation = $("<p>");
-    		bizLocation.text(location);
+        var bizLocation = $("<p>");
+        bizLocation.text(location);
 
         var bizLinkDiv = $("<div>");
         bizLinkDiv.attr("class","card-action");
@@ -79,8 +81,8 @@ $(document).ready(function(){
 
         bizImgDiv.appendTo(bizDiv2);
 
-    		bizName.appendTo(bizDetails2);
-    		bizLocation.appendTo(bizDetails2);
+        bizName.appendTo(bizDetails2);
+        bizLocation.appendTo(bizDetails2);
 
         bizDetails2.appendTo(bizDetails);
         bizDetails.appendTo(bizDiv2);
@@ -90,10 +92,18 @@ $(document).ready(function(){
 
         bizDiv2.appendTo(bizDiv);
 
-    		$("#search-results").append(bizDiv);     
+        $("#search-results").append(bizDiv);     
       }
     }
  }
 
- initialize();
+initialize() 
+
+ $("#get-results").on("click", function () {
+      $("#search-results").show();
+      $("#pre-search").hide();
+ });
 });
+
+
+
